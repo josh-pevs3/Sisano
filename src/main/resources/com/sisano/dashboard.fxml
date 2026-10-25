@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="mainLayout" prefHeight="600.0" prefWidth="1000.0" 
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.sisano.controller.DashboardController"
+            stylesheets="@estilos.css">
+    
+    <left>
+        <VBox spacing="5.0" styleClass="sidebar">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            
+            <Label text="SISANO" styleClass="app-logo" maxWidth="Infinity" />
+            
+            <Label fx:id="lblUsuario" text="Usuario: ..." styleClass="lbl-usuario" maxWidth="Infinity" />
+            
+            <VBox prefHeight="20"/>
+
+            <Button text="Inicio" maxWidth="Infinity" onAction="#mostrarInicio" styleClass="btn-menu"/>
+            <Button fx:id="btnMedicos" text="Médicos" maxWidth="Infinity" onAction="#mostrarMedicos" styleClass="btn-menu"/>
+            <Button fx:id="btnSalas" text="Salas" maxWidth="Infinity" onAction="#mostrarSalas" styleClass="btn-menu"/>
+            <Button text="Asignar Horarios" maxWidth="Infinity" onAction="#mostrarAsignacion" styleClass="btn-menu"/>
+            <Button text="Citas" maxWidth="Infinity" onAction="#mostrarCitas" styleClass="btn-menu"/>
+            <Button text="Pacientes" maxWidth="Infinity" onAction="#mostrarPacientes" styleClass="btn-menu"/>
+            <Button fx:id="btnGestion" text="Gestión" maxWidth="Infinity" onAction="#mostrarGestion" styleClass="btn-menu"/>
+            
+            <VBox VBox.vgrow="ALWAYS"/> 
+            
+            <Button text="Cerrar Sesión" maxWidth="Infinity" onAction="#cerrarSesion" styleClass="btn-logout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+            <Label text="Bienvenido al Sistema de Gestión Clínica" styleClass="label-bienvenida"/>
+        </StackPane>
+    </center>
+    
+</BorderPane>

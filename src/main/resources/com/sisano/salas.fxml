@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.sisano.controller.SalasController"
+            stylesheets="@styles.css">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <center>
+        <VBox spacing="10">
+            <Label text="Listado de Consultorios y Salas" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+                <padding><Insets bottom="5"/></padding>
+            </Label>
+            
+            <ListView fx:id="listaSalas" VBox.vgrow="ALWAYS" styleClass="list-view"/>
+            
+            <Label text="* Seleccione una sala para editarla o eliminarla." styleClass="label-info"/>
+        </VBox>
+    </center>
+    
+    <right>
+        <VBox spacing="15" prefWidth="320" styleClass="panel-lateral">
+           
+
+            <Label text="Gestión de Salas" styleClass="titulo-modulo"/>
+            <Separator/>
+            
+            <VBox spacing="5">
+                <Label text="Nombre / Identificador:" styleClass="label-campo"/>
+                <TextField fx:id="txtNombre" promptText="Ej. Consultorio 101"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Estado:" styleClass="label-campo"/>
+                <CheckBox fx:id="chkActiva" text="Sala Habilitada para uso" selected="true"/>
+                <Label text="Desmarcar si la sala está en mantenimiento." styleClass="label-info" wrapText="true"/>
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS" /> <Separator/>
+            
+            <VBox spacing="10">
+                <Button text="Guardar" onAction="#guardar" 
+                        maxWidth="Infinity" styleClass="btn-primary"/>
+                        
+                <Button text="Eliminar" onAction="#eliminar" 
+                        maxWidth="Infinity" styleClass="btn-danger-outline"/>
+            </VBox>
+            
+        </VBox>
+    </right>
+</BorderPane>

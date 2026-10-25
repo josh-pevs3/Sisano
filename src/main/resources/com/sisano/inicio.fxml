@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" fitToHeight="true" 
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.sisano.controller.InicioController" 
+            styleClass="dashboard-scroll"
+            stylesheets="@estilos.css">
+
+    <content>
+        <VBox spacing="20" styleClass="dashboard-content">
+            
+            <Label text="Resumen General" styleClass="dashboard-title" alignment="TOP_CENTER"/>
+            
+            <FlowPane hgap="20" vgap="20" alignment="TOP_CENTER" columnHalignment="CENTER">
+                
+                <VBox styleClass="card, card-blue">
+                    <Label text="TOTAL PACIENTES" styleClass="card-header"/>
+                    <Label fx:id="lblPacientes" text="0" styleClass="card-value"/>
+                    <Label text="Registrados en sistema" styleClass="card-subtitle"/>
+                </VBox>
+
+                <VBox styleClass="card, card-green">
+                    <Label text="STAFF MÉDICO" styleClass="card-header"/>
+                    <Label fx:id="lblMedicos" text="0" styleClass="card-value"/>
+                    <Label text="Activos actualmente" styleClass="card-subtitle"/>
+                </VBox>
+
+                <VBox styleClass="card, card-orange">
+                    <Label text="CONSULTORIOS" styleClass="card-header"/>
+                    <Label fx:id="lblSalas" text="0" styleClass="card-value"/>
+                    <Label text="Habilitados para uso" styleClass="card-subtitle"/>
+                </VBox>
+
+                <VBox styleClass="card, card-purple">
+                    <Label text="TURNOS ASIGNADOS" styleClass="card-header"/>
+                    <Label fx:id="lblAsignaciones" text="0" styleClass="card-value"/>
+                    <Label text="Desde hoy en adelante" styleClass="card-subtitle"/>
+                </VBox>
+
+                <VBox styleClass="card, card-red">
+                    <Label text="CITAS RESERVADAS" styleClass="card-header"/>
+                    <Label fx:id="lblCitas" text="0" styleClass="card-value"/>
+                    <Label text="Histórico total" styleClass="card-subtitle"/>
+                </VBox>
+                
+                <VBox styleClass="card, card-dark">
+                    <Label text="ATENCIÓN PARA HOY" styleClass="card-header"/>
+                    <Label fx:id="lblCitasHoy" text="0" styleClass="card-value"/>
+                    <Label text="Pacientes esperando hoy" styleClass="card-subtitle"/>
+                </VBox>
+
+            </FlowPane>
+        </VBox>
+    </content>
+</ScrollPane>

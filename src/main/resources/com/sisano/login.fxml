@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.sisano.controller.LoginController"
+           style="-fx-background-color: #ecf0f1;"> <VBox alignment="CENTER" spacing="20.0" maxWidth="350" maxHeight="400"
+          style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0); -fx-padding: 40;">
+        
+        <Label text="SISANO" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+       
+        <Separator opacity="0.5"/>
+        
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Usuario" styleClass="label-campo"/>
+            <TextField fx:id="txtUser" promptText="Ingrese su usuario" styleClass="text-field"/>
+        </VBox>
+        
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="Contraseña" styleClass="label-campo"/>
+            <PasswordField fx:id="txtPass" promptText="••••••" styleClass="text-field"/>
+        </VBox>
+        
+        <Button text="INGRESAR AL SISTEMA" onAction="#handleLogin" 
+                maxWidth="Infinity" styleClass="btn-primary" style="-fx-padding: 12;"/>
+        
+        <Label fx:id="lblError" textFill="#e74c3c" wrapText="true" textAlignment="CENTER"/>
+    </VBox>
+</StackPane>

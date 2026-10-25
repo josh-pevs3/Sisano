@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.sisano.controller.AsignacionController"
+           stylesheets="@estilos.css">
+
+    <VBox fx:id="panelSeleccion" alignment="TOP_CENTER" spacing="30" style="-fx-background-color: #ecf0f1; -fx-padding: 40;">
+        <Label text="Seleccione un Consultorio para Gestionar" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <content>
+                <FlowPane fx:id="containerTarjetas" hgap="30" vgap="30" alignment="CENTER" style="-fx-padding: 20;"/>
+            </content>
+        </ScrollPane>
+    </VBox>
+
+    <BorderPane fx:id="panelCalendario" visible="false">
+        <top>
+            <VBox spacing="0">
+                <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-width: 0 0 1 0;">
+                    <Button text="⬅ Volver a Salas" onAction="#volverASeleccion" 
+                            style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d; -fx-cursor: hand; -fx-font-weight: bold;"/>
+                    
+                    <Region HBox.hgrow="ALWAYS"/> <Button text="&lt;" onAction="#semanaAnterior" styleClass="btn-icon" prefWidth="50" style="-fx-font-size: 16px;"/>
+                    <Label fx:id="lblPeriodo" text="Cargando..." style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                    <Button text="&gt;" onAction="#semanaSiguiente" styleClass="btn-icon" prefWidth="50" style="-fx-font-size: 16px;"/>
+                    
+                    <Region HBox.hgrow="ALWAYS"/> </HBox>
+                
+                <HBox spacing="15.0" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #f9f9f9;">
+                    <Label text="Sala:" styleClass="label-campo"/>
+                    <ComboBox fx:id="comboSalas" prefWidth="180"/>
+                    
+                    <Separator orientation="VERTICAL"/>
+                    
+                    <Label text="Médico:" styleClass="label-campo"/>
+                    <ComboBox fx:id="comboMedicos" prefWidth="200" promptText="Seleccione Médico..."/>
+                    
+                    <Separator orientation="VERTICAL"/>
+
+                    <Label text="Ir a fecha:" styleClass="label-info"/>
+                    <DatePicker fx:id="datePicker" prefWidth="120" promptText="Ir a..."/>
+                    
+                    <Region HBox.hgrow="ALWAYS"/> 
+                    <Button text="Guardar Cambios" onAction="#guardarCambios" styleClass="btn-primary"/>
+                </HBox>
+            </VBox>
+        </top>
+
+        <center>
+            <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent;">
+                <GridPane fx:id="gridCalendario" styleClass="grid-calendario">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="60" prefWidth="60" halignment="CENTER"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="NEVER" minHeight="50"/> 
+                    </rowConstraints>
+                </GridPane>
+            </ScrollPane>
+        </center>
+    </BorderPane>
+
+</StackPane>

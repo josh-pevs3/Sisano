@@ -1,0 +1,403 @@
+/* ==================================================================
+ * HOJA DE ESTILOS - PROYECTO SISANO
+ * Tema: Clean Medical (Azul, Blanco, Gris suave)
+ * ================================================================== */
+
+/* 1. Estilos Globales de la Ventana */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-size: 16px;
+    -fx-background-color: #f4f6f7; /* Gris muy suave de fondo */
+}
+
+/* 2. Estilos para la Tabla (TableView) */
+.table-view {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 0); /* Sombra sutil */
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 5px 5px 0 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 35px; /* Altura de la cabecera */
+    -fx-border-color: transparent transparent #bdc3c7 transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* Fila seleccionada */
+.table-row-cell:filled:selected {
+    -fx-background-color: #3498db; /* Azul corporativo */
+    -fx-text-fill: white;
+}
+
+/* 3. Panel Lateral (Formulario) */
+.panel-lateral {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 0 1; /* Solo borde izquierdo */
+    -fx-padding: 25;
+}
+
+/* 4. Títulos y Etiquetas */
+.titulo-modulo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.label-campo {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d; /* Gris texto secundario */
+    -fx-font-weight: bold;
+}
+
+.label-info {
+    -fx-font-size: 11px;
+    -fx-text-fill: #95a5a6;
+    -fx-font-style: italic;
+}
+
+/* 5. Campos de Texto (Inputs) */
+.text-field, .combo-box {
+    -fx-pref-height: 35px; /* Más altos para mejor UX */
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #3498db; /* Resaltado azul al escribir */
+    -fx-background-color: #ebf5fb;
+}
+
+/* Input deshabilitado (Código automático) */
+.text-field:disabled {
+    -fx-background-color: #ecf0f1;
+    -fx-opacity: 1; /* Para que el texto se lea bien aunque esté disabled */
+}
+
+/* 6. Botones */
+.button {
+    -fx-cursor: hand;
+    -fx-pref-height: 38px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 5 15 5 15;
+}
+
+/* Botón Guardar (Verde) */
+.btn-primary {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+.btn-primary:hover { -fx-background-color: #219150; }
+
+/* Botón Eliminar (Borde Rojo) */
+.btn-danger-outline {
+    -fx-background-color: white;
+    -fx-border-color: #e74c3c;
+    -fx-text-fill: #e74c3c;
+    -fx-border-radius: 5px;
+}
+.btn-danger-outline:hover {
+    -fx-background-color: #fce4e4;
+}
+
+/* Botón Añadir (+) */
+.btn-icon {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-min-width: 35px;
+    -fx-min-height: 35px;
+    -fx-alignment: center;
+}
+.btn-icon:hover { -fx-background-color: #2980b9; }
+
+/* 7. Estilos para ListView (Lista de Salas) */
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 0);
+    -fx-padding: 5;
+}
+
+.list-cell {
+    -fx-padding: 10 15 10 15; /* Más espacio interno en cada ítem */
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #ecf0f1 transparent; /* Línea separadora sutil */
+}
+
+/* Efecto al pasar el mouse por encima */
+.list-cell:filled:hover {
+    -fx-background-color: #ebf5fb; 
+    -fx-cursor: hand;
+}
+
+/* Ítem seleccionado */
+.list-cell:filled:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* 8. CheckBox estilizado */
+.check-box {
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+    -fx-padding: 5 0 5 0;
+}
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+}
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+.check-box:selected .box {
+    -fx-background-color: #27ae60; /* Verde al marcar */
+    -fx-border-color: #27ae60;
+}
+
+/* ==================================================================
+   CALENDARIO / ASIGNACIÓN DE TURNOS - GRID VISIBLE
+   ================================================================== */
+
+.grid-calendario {
+    -fx-background-color: #bdc3c7; /* Color de las líneas de división */
+    -fx-padding: 1; /* Borde exterior */
+    -fx-hgap: 1;    /* Grosor línea vertical */
+    -fx-vgap: 1;    /* Grosor línea horizontal */
+}
+
+/* Cabeceras de Días y Horas */
+.calendario-header {
+    -fx-background-color: #f4f6f7; /* Gris muy clarito, casi blanco */
+    -fx-padding: 15 5 15 5;        /* ARRIBA/ABAJO: 15px (esto da el salto), LADO: 5px */
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;           /* Letra un poco más grande */
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 2 0;     /* Línea inferior un poco más gruesa (2px) para separar */
+}
+
+/* Ajuste para que las celdas de hora se alineen arriba */
+.calendario-header-hora {
+    -fx-alignment: TOP_CENTER;
+    -fx-padding: 10 0 0 0;
+}
+
+/* Celdas normales */
+.calendario-celda {
+    -fx-background-color: white; /* Fondo blanco para que contraste con el gap gris */
+}
+
+.calendario-celda:hover {
+    -fx-background-color: #f4f6f7;
+    -fx-cursor: hand;
+}
+
+/* Slot Ocupado */
+.slot-ocupado {
+    -fx-background-color: #d6eaf8; /* Azul suave */
+    -fx-border-color: #3498db;
+    -fx-border-width: 0 0 0 4; /* Borde izquierdo azul fuerte */
+}
+
+/* Slot Nuevo (Pendiente de guardar) */
+.slot-nuevo {
+    -fx-background-color: #abebc6; /* Verde suave */
+    -fx-border-color: #27ae60;
+    -fx-border-width: 0 0 0 4;
+}
+
+/* ==================================================================
+   MÓDULO DE CITAS
+   ================================================================== */
+
+/* Slot Vacío (Sin médico asignado) */
+.cita-vacia {
+    -fx-background-color: #f8f9f9;
+    -fx-opacity: 0.5;
+}
+
+/* Slot Disponible (Médico listo, sin paciente) */
+.cita-disponible {
+    -fx-background-color: #d5f5e3; /* Verde menta */
+    -fx-border-color: #27ae60;
+    -fx-border-width: 0 0 0 4;
+    -fx-cursor: hand;
+}
+.cita-disponible:hover { -fx-background-color: #abebc6; }
+
+/* Slot Ocupado (Paciente Agendado) */
+.cita-ocupada {
+    -fx-background-color: #fadbd8; /* Rojo suave */
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 0 0 0 4;
+    -fx-cursor: hand;
+}
+.cita-ocupada:hover { -fx-background-color: #f5b7b1; }
+
+/* Efecto visual cuando estamos "Moviendo/Postergando" una cita */
+.modo-mover {
+    -fx-effect: dropshadow(three-pass-box, #f1c40f, 10, 0, 0, 0);
+    -fx-border-color: #f1c40f;
+}
+/* ==================================================================
+   DASHBOARD / TARJETAS
+   ================================================================== */
+
+.dashboard-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 10 0;
+}
+
+/* Base de la tarjeta */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 2);
+    -fx-padding: 20;
+    -fx-min-width: 200px;
+    -fx-pref-width: 220px;
+}
+
+.card-header {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.8);
+}
+
+.card-value {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.card-subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+/* Variantes de Color  */
+.card-blue   { -fx-background-color: linear-gradient(to bottom right, #3498db, #2980b9); }
+.card-green  { -fx-background-color: linear-gradient(to bottom right, #2ecc71, #27ae60); }
+.card-orange { -fx-background-color: linear-gradient(to bottom right, #f39c12, #d35400); }
+.card-purple { -fx-background-color: linear-gradient(to bottom right, #9b59b6, #8e44ad); }
+.card-red    { -fx-background-color: linear-gradient(to bottom right, #e74c3c, #c0392b); }
+.card-dark   { -fx-background-color: linear-gradient(to bottom right, #34495e, #2c3e50); }
+
+/* Sidebar del Dashboard */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20 10 20 10;
+}
+
+.app-logo {
+    -fx-font-size: 24px; /* Aumentado para mayor impacto */
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+}
+
+.lbl-usuario {
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 20 0; /* Separación abajo */
+    -fx-alignment: center;
+}
+
+/* Botones del Menú */
+.btn-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ecf0f1;
+    -fx-alignment: CENTER_LEFT; /* Texto alineado a la izquierda se ve mejor en menús */
+    -fx-padding: 10 15 10 15;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+.btn-menu:hover {
+    -fx-background-color: #34495e;
+    -fx-border-color: transparent transparent transparent #3498db; /* Línea azul a la izquierda al pasar mouse */
+    -fx-border-width: 0 0 0 4;
+}
+
+/* Botón Cerrar Sesión (Específico) */
+.btn-logout {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+.btn-logout:hover { -fx-background-color: #e74c3c; }
+
+/* ==================================================================
+   ESTILOS DE CONTENEDORES DASHBOARD 
+   ================================================================== */
+
+/* El ScrollPane principal */
+.dashboard-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent; /* Importante para quitar el fondo gris por defecto de JavaFX */
+    -fx-padding: 0; /* Quitamos padding aquí para manejarlo dentro */
+}
+
+/* El contenedor interno VBox */
+.dashboard-content {
+    -fx-padding: 30; /* Más aire alrededor */
+    -fx-background-color: transparent;
+}
+
+/* Ajuste a las Tarjetas para que parezcan botones interactivos */
+.card:hover {
+    -fx-scale-x: 1.02; /* Efecto de zoom sutil al pasar el mouse */
+    -fx-scale-y: 1.02;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 4);
+}
+/* Tarjetas de Selección de Sala (Pantalla de Inicio de Asignación) */
+.card-sala {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-pref-width: 180px;
+    -fx-pref-height: 120px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+    -fx-wrap-text: true;
+    -fx-text-alignment: CENTER;
+}
+
+.card-sala:hover {
+    -fx-background-color: #3498db; /* Azul al pasar el mouse */
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.4), 15, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
